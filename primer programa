@@ -1,0 +1,58 @@
+package holamundo;
+
+import humanidad.Humano;
+import java.util.Scanner;
+
+public class Holamundo {
+    
+    public static void main(String[] args) {
+       System.out.println("ola k ase");
+       //humano1
+       Humano objeto1= new Humano();
+       System.out.println(objeto1.saludar());
+        System.out.println(objeto1.saludarMejor());
+        //otro humano2
+        Humano objeto2= new Humano("erick",18);
+        System.out.println(objeto2.saludarMejor());
+        //otro humano3
+        Scanner scanner =new Scanner (System.in);
+        System.out.println("por favor ingrese nombre");
+        String n=scanner.next();
+        System.out.println("por favor ingrese edad");
+        int e= scanner.nextInt();
+        Humano objeto3= new Humano(n,e);
+        System.out.println(objeto3.saludarMejor());
+        
+    }
+    
+}
+
+
+
+
+
+package humanidad;
+
+public class Humano {
+    private String Nombre;
+    private int    Edad;
+    
+    //constructor
+    public Humano(){
+        this.Nombre="Jose";
+        this.Edad=17;
+    }
+    
+    public Humano(String Nombre,int Edad){
+        this.Nombre=Nombre;
+        this.Edad=Edad;
+    }
+    //operaciones
+    public String saludar(){
+        return "Buenas Tardes";
+    }
+    public String saludarMejor(){
+        return "Hola soy "+this.Nombre+" y tengo "+this.Edad+" años";
+    }
+    
+}
