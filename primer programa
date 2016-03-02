@@ -1,3 +1,57 @@
+
+package humanidad;
+
+public class Humano {
+    private String Nombre;
+    private int    Edad;
+   
+    //constructor
+    public Humano(){
+        this.Nombre="Jose";
+        this.Edad=17;
+    }
+    
+    public Humano(String Nombre,int Edad){
+        this.Nombre=Nombre;
+        this.Edad=Edad;
+    }
+    //operaciones
+    public String saludar(){
+        return "Buenas Tardes";
+    }
+    public String saludarMejor(){
+        return "Hola soy "+this.Nombre+" y tengo "+this.Edad+" años";
+    }
+    
+    public String meconsidero(){
+        if(this.Edad >=65)
+            return "me considero viejo";
+        else
+            return"me considero joven";
+    }
+    public String contar(int n){
+        String acumulador = "";
+        for(int I=1;I<=n;I++){
+            //System.out.println(I);
+            acumulador =acumulador+"hola"+I+"\n" ;
+                    
+        }
+        return acumulador;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 package holamundo;
 
 import humanidad.Humano;
@@ -20,39 +74,13 @@ public class Holamundo {
         String n=scanner.next();
         System.out.println("por favor ingrese edad");
         int e= scanner.nextInt();
+        System.out.println("por favor ingrese numero a contar");
+        int i=scanner.nextInt();
         Humano objeto3= new Humano(n,e);
         System.out.println(objeto3.saludarMejor());
+        System.out.println(objeto3.meconsidero());
+        System.out.println(objeto3.contar(i));
         
-    }
-    
-}
-
-
-
-
-
-package humanidad;
-
-public class Humano {
-    private String Nombre;
-    private int    Edad;
-    
-    //constructor
-    public Humano(){
-        this.Nombre="Jose";
-        this.Edad=17;
-    }
-    
-    public Humano(String Nombre,int Edad){
-        this.Nombre=Nombre;
-        this.Edad=Edad;
-    }
-    //operaciones
-    public String saludar(){
-        return "Buenas Tardes";
-    }
-    public String saludarMejor(){
-        return "Hola soy "+this.Nombre+" y tengo "+this.Edad+" años";
     }
     
 }
