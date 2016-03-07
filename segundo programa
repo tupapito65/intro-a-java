@@ -1,0 +1,78 @@
+package number1;
+
+
+public class number {
+    
+    private int valor;
+    //Contructores
+    public number() { 
+        this.valor=0;
+       
+    }
+    
+    public number(int n){
+        this.valor=n;
+    }
+    //metodos u operaciones
+    public String decirvalor(){
+        return "el valor es "+this.valor+"";
+    }
+     //metodo primitivo   
+    public int sumar(int otrovalor){
+        return this.valor + otrovalor;
+    }
+    //metodo objeto
+    public number sumar (number otronumero){
+        number resultado = new number();
+        resultado.setValor(this.valor + otronumero.getValor());
+        return resultado;
+    }
+    
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package number1;
+
+
+//import number1.number;
+public class Number1 {
+
+   
+    public static void main(String[] args) {
+       //primer objeto
+        number obj1= new number(8);
+       System.out.println(obj1.decirvalor());
+       //segundo objeto 
+       number obj2= new number();
+       System.out.println(obj2.decirvalor());
+       obj2.setValor(4);
+       int y= obj2.sumar(7);
+       System.out.println("suma es:"+ y);
+       
+       number objY =obj2.sumar(new number(7));
+       System.out.println("suma es "+objY.getValor());
+       
+    }
+    
+}
