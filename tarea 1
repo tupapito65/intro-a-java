@@ -20,6 +20,8 @@ public class Operaciones {
         System.out.println(obj1.restar());
         System.out.print("la division es ");
         System.out.println(obj1.dividir());
+        System.out.print("la multiplicacion es ");
+        System.out.println(obj1.multiplicar());
         
     }
     
@@ -70,6 +72,10 @@ public class operaciones1 {
     }
     public int dividir(){
     aux=digito1/digito2;
+    return aux;
+    }
+    public int multiplicar(){
+    aux=digito1*digito2;
     return aux;
     }
     
