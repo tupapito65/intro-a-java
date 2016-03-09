@@ -1,0 +1,183 @@
+package gameguess;
+
+import java.util.Random;
+
+public class moneda {
+
+    private String cara1;
+    private String cara2;
+
+    public moneda() {
+        this.cara1 = "cara";
+        this.cara2 = "cruz";
+    }
+
+    public String lanzar1() {
+        Random rand;
+        int valor;
+        //instanciar la clase o crear el objeto
+        rand = new Random();
+        valor = rand.nextInt(2);
+
+        if (valor == 0) {
+            return this.cara1;
+        } else {
+            return this.cara2;
+        }
+
+    }
+
+    public String lanzar2() {
+        Random rand;
+        int valor1;
+        int valor2;
+
+        rand = new Random();
+        valor1 = rand.nextInt(2);
+        valor2 = rand.nextInt(2);
+
+        String acumulador;
+
+        if (valor1 == 0) {
+            acumulador = this.cara1;
+        } else {
+            acumulador = this.cara2;
+        }
+        acumulador += " ";
+        if (valor2 == 0) {
+            acumulador += this.cara1;
+        } else {
+            acumulador += this.cara2;
+        }
+        return acumulador;
+
+    }
+
+    public String lanzar3() {
+        Random rand;
+        int valor1;
+        int valor2;
+        int valor3;
+
+        rand = new Random();
+        valor1 = rand.nextInt(2);
+        valor2 = rand.nextInt(2);
+        valor3 = rand.nextInt(2);
+        String acumulador;
+
+        if (valor1 == 0) {
+            acumulador = this.cara1;
+        } else {
+            acumulador = this.cara2;
+        }
+        acumulador += " ";
+        if (valor2 == 0) {
+            acumulador += this.cara1;
+        } else {
+            acumulador += this.cara2;
+        }
+        acumulador += " ";
+        if (valor3 == 0) {
+            acumulador += this.cara1;
+        } else {
+            acumulador += this.cara2;
+        }
+        return acumulador;
+
+    }
+
+    public String lanzarn(int n) {
+
+        Random rand;
+        int valor;
+        String acumulador;
+        rand = new Random();
+        acumulador = "";
+        for (int i = 0; i < n; i++) {
+            valor = rand.nextInt(2);
+            if (valor == 0) {
+                acumulador += this.cara1;
+            } else {
+                acumulador += this.cara2;
+            }
+            acumulador += " ";
+        }
+        return acumulador;
+    }
+    public String cantidadlados(int n) {
+
+        Random rand;
+        int valor;
+        int aux1=0;
+        int aux2=0;
+        String acumulador;
+        rand = new Random();
+        acumulador = "";
+        for (int i = 0; i < n; i++) {
+            valor = rand.nextInt(2);
+            if (valor == 0) {
+                acumulador += this.cara1;
+                aux1=aux1+1;
+            } else {
+                acumulador += this.cara2;
+                aux2=aux2+1;
+                   
+                
+            }
+            acumulador+=" ";
+        }
+        acumulador+="\n";
+        acumulador+="total cara "+aux1;
+        acumulador+="\n";
+        acumulador+="total cruz "+aux2;
+        acumulador+="\n";
+        if(aux1==aux2)
+            acumulador+="es un empate";
+        else{if(aux1>aux2)
+          acumulador+="el mayor es cara";
+        else
+        acumulador+="el mayor es cruz";}
+        
+        return acumulador;
+        
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package gameguess;
+import java.util.Scanner;
+
+public class Gameguess {
+
+    
+    public static void main(String[] args) {
+        //declarar
+        moneda veronica;
+        //instanciar o crear objeto
+        veronica=new moneda();
+        System.out.println(veronica.lanzar1());
+        System.out.println(veronica.lanzar2());
+        System.out.println(veronica.lanzar3());
+         Scanner scanner =new Scanner (System.in);
+        System.out.println("Por favor ingrese primer digito");
+        int a= scanner.nextInt();
+        System.out.println(veronica.lanzarn(a));
+        System.out.println(veronica.cantidadlados(a));
+        
+    
+}
+}
