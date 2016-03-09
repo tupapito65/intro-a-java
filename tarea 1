@@ -1,0 +1,77 @@
+
+package operaciones;
+import java.util.Scanner;
+
+public class Operaciones {
+    
+    
+    public static void main(String[] args) {
+        
+        //suma
+        Scanner scanner =new Scanner (System.in);
+        System.out.println("Por favor ingrese primer digito");
+        int a= scanner.nextInt();
+        System.out.println("Por favor ingrese segundo digito digito");
+        int b= scanner.nextInt();
+        operaciones1 obj1= new operaciones1(a,b);
+        System.out.print("la suma es ");
+        System.out.println(obj1.sumar());
+        System.out.print("la resta es ");
+        System.out.println(obj1.restar());
+        System.out.print("la division es ");
+        System.out.println(obj1.dividir());
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package operaciones;
+
+
+public class operaciones1 {
+    private int digito1;
+    private int digito2;
+    private int aux;
+//constructores
+    public operaciones1(){
+    this.digito1=0;
+    this.digito2=0;
+    this.aux=0;
+    }
+    public operaciones1(int n,int m){
+    this.digito1=n;
+    this.digito2=m;
+    
+    }
+//metodos u operaciones
+    public int sumar(){
+    aux=digito1+digito2;
+    return aux;
+    }
+    public int restar(){
+    aux=digito1-digito2;
+    return aux;
+    }
+    public int dividir(){
+    aux=digito1/digito2;
+    return aux;
+    }
+    
+    
+}
