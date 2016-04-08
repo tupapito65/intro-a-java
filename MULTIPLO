@@ -1,0 +1,28 @@
+
+package multiplos;
+import java.util.Scanner; 
+
+public class Multiplos {
+
+    
+    public static void main(String[] args) {
+        
+         System.out.print("ingrese numero ");  
+         Scanner scanner = new Scanner(System.in);  
+         int cant = scanner.nextInt();
+         if ( cant%5==0 ||cant%7==0  ) {
+             System.out.println("\nel numero es multiplo de 5 " );
+            
+        }else{if(cant%7==0)
+            System.out.println("\nel numero es multiplo de 7 " );
+        else
+            System.out.println("\nel numero no es multiplo de 5 o 7 "); 
+            
+                }
+          
+          
+        
+        
+    }
+}    
+
