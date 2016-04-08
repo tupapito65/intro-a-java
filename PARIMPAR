@@ -1,0 +1,30 @@
+package paroimpar;
+
+import java.util.Scanner;  
+  
+public class ParoImpar {      
+     public static void main(String[] args) {  
+           
+        int acumPar = 0;
+        int acumImpar = 0;
+        int d = 0;
+        int r = 0;
+         System.out.print("ingrese numero ");  
+         Scanner scanner = new Scanner(System.in);  
+         int cant = scanner.nextInt();
+         while ( cant > 0 ) {
+            d = cant / 10;
+            r = cant % 10;
+            if ( r % 2 == 0 )
+                acumPar++;
+            else
+                acumImpar++;
+            cant = d;    
+        }
+         System.out.println("\nCuenta Pares " + acumPar);  
+         System.out.println("Cuenta Impares " + acumImpar);  
+        
+        
+    }
+}    
+  
